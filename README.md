@@ -26,8 +26,8 @@ This section outlines the setup, dependencies, and data layout needed to reprodu
 Clone the repository and enter the project directory:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/hasanmirza72/proteome-wide-off-target-pipeline
+cd proteome-wide-off-target-pipeline
 ```
 
 ### 📦 Dependency installation
