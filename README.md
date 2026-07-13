@@ -11,8 +11,11 @@ A structural bioinformatics framework that predicts drug off-targets by searchin
 ![Domain](https://img.shields.io/badge/Domain-Bioinformatics-27ae60?style=for-the-badge)
 
 **Researcher:** Mirza Muhammad Hasan Ali
+
 **Academic Institution:** Stockholm University / SciLifeLab
+
 **Programme:** MSc Bioinformatics
+
 **Supervisor:** Prof. Arne Elofsson
 
 ---
@@ -192,14 +195,21 @@ Pocket detection collapses in the unbound state: **holo 82.6%** versus **apo 69.
 > **Figure 2.** Pocket detection collapses in the unbound (apo) state across both benchmark sets and both distance thresholds. Holo exceeds apo in every panel.
 
 
-### ⚖️ 6.3 Baseline comparison
+### 🎯 6.3 Recall of documented off-targets
 
-Benchmarked against BLAST+ and Foldseek, the three methods prove **complementary rather than competitive**. FoldDisco ranks pocket-similar off-targets highest; sequence and structure search give broader fold-level recall. Critically, **all three methods recover zero fold-unrelated off-targets**, a biological boundary that is method-independent, not a limitation specific to this pipeline.
+FoldDisco's high-confidence recall of documented off-targets is governed by fold-relatedness. Off-targets that share the query protein's family are recovered; those that occupy an unrelated fold are missed. Overall high-confidence recall is **8 of 26** documented off-targets.
 
 ![Recall by fold-relatedness](scripts/figures/figures/fig7_recall_split.png)
 
-> **Figure 3.** Documented off-target recall splits by fold-relatedness: recovered where the off-target shares the query family, zero where it occupies an unrelated fold. This boundary holds for BLAST and Foldseek too.
+> **Figure 3.** FoldDisco high-confidence recall of documented off-targets, split by fold-relatedness. Each bar shows found/total per drug. Off-targets that share the query's family are recovered (for example pentoxifylline 3/3, selumetinib 1/1); those on unrelated folds are missed (imatinib 0/4, ibrutinib 0/4). Overall high-confidence recall is 8/26.
 
+### ⚖️ 6.4 Baseline comparison against BLAST and Foldseek
+
+The pipeline is benchmarked against two established sequence- and structure-similarity methods, BLAST+ and Foldseek. The three prove **complementary rather than competitive**: FoldDisco ranks pocket-similar off-targets highest, while sequence and structure search give broader fold-level recall. Critically, at recall@100 **all three methods recover zero fold-unrelated off-targets**, a biological boundary that is method-independent rather than a limitation specific to this pipeline. The comparison establishes complementarity, not superiority; FoldDisco is best read as a precision-oriented addition to sequence and structure search, not a replacement for them.
+
+![Baseline comparison](scripts/figures/figures/fig10_baseline_comparison.png)
+
+> **Figure 4.** Documented off-target recall by method at three rank cutoffs (of 26 documented targets). FoldDisco leads at the top of the ranked list (8 at recall@10 versus 7 and 5), while BLAST and Foldseek recover more deeper down (14 each at recall@100 versus 11). The methods are complementary: FoldDisco favours precision, the global methods favour breadth.
 
 ---
 
