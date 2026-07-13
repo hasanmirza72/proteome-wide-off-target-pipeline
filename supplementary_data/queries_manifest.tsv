@@ -1,0 +1,4 @@
+target_id	self_uniprot	holo_pdb	holo_residues	apo_pdb	apo_residues
+6VCJ	P00374	queries/6VCJ_holo.pdb	A7,A15,A32,A54,A57,A61	queries/6VCJ_apo.pdb	A7,A15,A32,A54,A57,A61
+6YG2	O14733	queries/6YG2_holo.pdb	A149,A165,A167,A215,A217	queries/6YG2_apo.pdb	A149,A165,A167,A215,A217
+2Y05	Q14914	queries/2Y05_holo.pdb	A49,A52,A53,A56,A88,A245	queries/2Y05_apo.pdb	A49,A52,A53,A56,A88,A245

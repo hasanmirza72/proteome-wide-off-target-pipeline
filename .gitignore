@@ -1,0 +1,82 @@
+# ─────────────────────────────────────────────────────────────
+# Large data: structures & libraries (regenerate/download; never commit)
+# ─────────────────────────────────────────────────────────────
+af_by_accession/
+alphafold_structures/
+alphafold_structures_pdb_only/
+alphafold_predictions/
+alphafold_pockets_clean/
+dataset_monomers_pdb/
+dataset_dimers_pdb/
+dataset_apo_pdb/
+dataset_monomers_cleaned/
+p2rank_out_holo/
+p2rank_out_apo/
+*.pdb
+
+# ─────────────────────────────────────────────────────────────
+# Search indexes (rebuilt by the pipeline; binary, large)
+# ─────────────────────────────────────────────────────────────
+folddisco_af_index*
+library_blastdb.*
+library_foldseekdb*
+/library_20550.fasta
+/benchmark_targets.fasta
+foldseek_queries/
+
+# ─────────────────────────────────────────────────────────────
+# Per-query hit folders and archives
+# ─────────────────────────────────────────────────────────────
+hits/
+hits_offtarget/
+hits_redundant/
+*.tar.gz
+
+# ─────────────────────────────────────────────────────────────
+# API caches (regenerated on first run)
+# ─────────────────────────────────────────────────────────────
+chembl_cache/
+enrichr_cache/
+
+# ─────────────────────────────────────────────────────────────
+# Large flat-file downloads
+# ─────────────────────────────────────────────────────────────
+/meddra_all_se.tsv.gz
+/drug_names.tsv
+/swissprot_human.txt
+
+# ─────────────────────────────────────────────────────────────
+# Logs / temp / scratch
+# ─────────────────────────────────────────────────────────────
+logs/
+tmp/
+extra_files/
+*.log
+
+# ─────────────────────────────────────────────────────────────
+# Python
+# ─────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ─────────────────────────────────────────────────────────────
+# OS / editor
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# ─────────────────────────────────────────────────────────────
+# NOTE: the following ARE committed (kept intentionally):
+#   scripts/**            all pipeline scripts
+#   scripts/figures/figures/*.png   the thesis figures (small, <500KB each)
+#   results/*.tsv, results/*.csv    small result tables
+#   supplementary_data/*.tsv, *.csv the datasets behind the thesis
+#   README.md, docs/, requirements.txt, LICENSE
+# ─────────────────────────────────────────────────────────────

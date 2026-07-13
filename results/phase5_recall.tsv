@@ -1,0 +1,27 @@
+drug_target	known_uniprot	justification	confidence	in_library	found_at_high	found_at_supported
+2XP2	P08581	MET - crizotinib primary/second target, documented [high]	high	yes	no	no
+2XP2	P07947	YES1 - documented crizotinib off-target [high]	high	yes	yes	yes
+2XP2	O14965	AURKA - reported crizotinib off-target [med]	med	yes	yes	yes
+1XBB	P00519	ABL1 - imatinib primary target [high]	high	yes	no	no
+1XBB	P10721	KIT  - imatinib documented target [high]	high	yes	no	no
+1XBB	P16234	PDGFRA - imatinib documented target [high]	high	yes	no	no
+1XBB	Q08345	DDR1 - imatinib documented target [high]	high	yes	no	no
+4U7Z	P36507	MAP2K2 (MEK2) - documented selumetinib co-target [high]	high	yes	yes	yes
+6YG2	Q06187	BTK - ibrutinib primary target [high]	high	yes	no	no
+6YG2	P07332	FES - ibrutinib documented off-target [med]	med	yes	no	no
+6YG2	Q08881	ITK - ibrutinib documented off-target [med]	med	yes	no	no
+6YG2	P00533	EGFR - ibrutinib documented off-target [med]	med	yes	no	no
+3RX3	O60218	AKR1B10 - documented sulindac target [high]	high	yes	yes	yes
+3RX3	P35354	PTGS2/COX2 - sulindac primary anti-inflammatory target [high]	high	yes	no	no
+3RX3	P23219	PTGS1/COX1 - sulindac target [high]	high	yes	no	no
+3TVX	Q07343	PDE4B - documented pentoxifylline target [high]	high	yes	yes	yes
+3TVX	Q08499	PDE4D - documented pentoxifylline target [high]	high	yes	yes	yes
+3TVX	Q14432	PDE3A - pentoxifylline inhibits PDE3 [med]	med	yes	yes	yes
+4ODR	P68106	FKBP1B - documented tacrolimus binder [high]	high	yes	yes	yes
+4ODR	Q02790	FKBP4 - documented FK506 binder [med]	med	yes	no	no
+4ODR	Q13451	FKBP5 - documented FK506 binder [med]	med	yes	no	no
+2Y05	P03372	ESR1 - raloxifene primary target [high]	high	yes	no	no
+2Y05	Q92731	ESR2 - raloxifene target [high]	high	yes	no	no
+4R7L	Q13547	HDAC1 - vorinostat target [high]	high	yes	no	no
+4R7L	Q92769	HDAC2 - vorinostat target [high]	high	yes	no	no
+4R7L	P56524	HDAC4 - vorinostat target [med]	med	yes	no	no

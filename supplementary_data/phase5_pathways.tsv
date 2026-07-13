@@ -1,0 +1,54 @@
+drug_target	drug	set_type	n_genes	library	term	adj_p	overlap	flag
+1XBB	Imatinib	all_hits	9	GO_Biological_Process_2023	Protein Phosphorylation (GO:0006468)	5.07e-08	NIM1K;MAP2K1;STK17B;CHEK2;AKT1;MAP3K10;MAP3K13	EXPECTED(family)
+1XBB	Imatinib	all_hits	9	GO_Biological_Process_2023	Protein Autophosphorylation (GO:0046777)	5.05e-07	STK17B;CHEK2;AKT1;MAP3K10;MAP3K13	EXPECTED(family)
+1XBB	Imatinib	all_hits	9	GO_Biological_Process_2023	Phosphorylation (GO:0016310)	6.26e-07	NIM1K;MAP2K1;STK17B;CHEK2;AKT1;MAP3K13	EXPECTED(family)
+1XBB	Imatinib	all_hits	9	GO_Biological_Process_2023	Protein Modification Process (GO:0036211)	9.51e-06	NIM1K;MAP2K1;STK17B;CHEK2;AKT1;MAP3K13	other
+1XBB	Imatinib	all_hits	9	GO_Biological_Process_2023	JNK Cascade (GO:0007254)	1.06e-05	MAP3K10;MAP2K7;MAP3K13	other
+1XBB	Imatinib	all_hits	9	KEGG_2021_Human	Fc epsilon RI signaling pathway	2.38e-04	MAP2K1;AKT1;MAP2K7	other
+1XBB	Imatinib	all_hits	9	KEGG_2021_Human	MAPK signaling pathway	2.38e-04	MAP2K1;AKT1;MAP2K7;MAP3K13	EXPECTED(family)
+1XBB	Imatinib	all_hits	9	KEGG_2021_Human	ErbB signaling pathway	2.38e-04	MAP2K1;AKT1;MAP2K7	other
+1XBB	Imatinib	all_hits	9	KEGG_2021_Human	T cell receptor signaling pathway	2.62e-04	MAP2K1;AKT1;MAP2K7	other
+1XBB	Imatinib	all_hits	9	KEGG_2021_Human	Toll-like receptor signaling pathway	2.62e-04	MAP2K1;AKT1;MAP2K7	other
+1XBB	Imatinib	all_hits	9	Reactome_2022	Uptake And Function Of Anthrax Toxins R-HSA-5210891	1.66e-03	MAP2K1;MAP2K7	other
+1XBB	Imatinib	all_hits	9	Reactome_2022	Uptake And Actions Of Bacterial Toxins R-HSA-5339562	4.99e-03	MAP2K1;MAP2K7	other
+1XBB	Imatinib	all_hits	9	Reactome_2022	Regulation Of TP53 Degradation R-HSA-6804757	4.99e-03	CHEK2;AKT1	other
+1XBB	Imatinib	all_hits	9	Reactome_2022	Regulation Of TP53 Expression And Degradation R-HSA-6806003	4.99e-03	CHEK2;AKT1	other
+1XBB	Imatinib	all_hits	9	Reactome_2022	MAP Kinase Activation R-HSA-450294	1.13e-02	MAP2K1;MAP2K7	EXPECTED(family)
+2XP2	Crizotinib	all_hits	8	GO_Biological_Process_2023	Enzyme-Linked Receptor Protein Signaling Pathway (GO:0007167)	9.60e-08	YES1;SRMS;PTK6;FGFR2;FRK	other
+2XP2	Crizotinib	all_hits	8	GO_Biological_Process_2023	Transmembrane Receptor Protein Tyrosine Kinase Signaling Pathway (GO:0007169)	3.10e-06	YES1;SRMS;PTK6;FGFR2;FRK	EXPECTED(family)
+2XP2	Crizotinib	all_hits	8	GO_Biological_Process_2023	Protein Autophosphorylation (GO:0046777)	1.94e-05	SRMS;PTK6;FGFR2;AURKA	EXPECTED(family)
+2XP2	Crizotinib	all_hits	8	GO_Biological_Process_2023	Positive Regulation Of Cell Cycle (GO:0045787)	8.19e-05	PTK6;FGFR2;AURKA	other
+2XP2	Crizotinib	all_hits	8	GO_Biological_Process_2023	Peptidyl-Tyrosine Phosphorylation (GO:0018108)	8.19e-05	SRMS;PTK6;FGFR2	EXPECTED(family)
+2XP2	Crizotinib	all_hits	8	KEGG_2021_Human	MAPK signaling pathway	3.33e-03	MAP3K2;MAP2K5;FGFR2	EXPECTED(family)
+2XP2	Crizotinib	all_hits	8	KEGG_2021_Human	Gap junction	5.27e-03	MAP3K2;MAP2K5	other
+2XP2	Crizotinib	all_hits	8	Reactome_2022	Signaling By Receptor Tyrosine Kinases R-HSA-9006934	2.85e-03	YES1;PTK6;MAP2K5;FGFR2	EXPECTED(family)
+2XP2	Crizotinib	all_hits	8	Reactome_2022	Signal Transduction R-HSA-162582	4.61e-03	YES1;SRMS;PTK6;MAP2K5;FGFR2;FRK	other
+2XP2	Crizotinib	all_hits	8	Reactome_2022	Signaling By ERBB2 R-HSA-1227986	5.42e-03	YES1;PTK6	other
+2XP2	Crizotinib	all_hits	8	Reactome_2022	Signaling By Non-Receptor Tyrosine Kinases R-HSA-9006927	5.42e-03	SRMS;PTK6	EXPECTED(family)
+2XP2	Crizotinib	all_hits	8	Reactome_2022	PTK6 Expression R-HSA-8849473	3.72e-02	PTK6	other
+3TVX	Pentoxifylline	all_hits	7	GO_Biological_Process_2023	Negative Regulation Of cAMP-mediated Signaling (GO:0043951)	1.53e-07	PDE4D;PDE3B;PDE3A	EXPECTED(family)
+3TVX	Pentoxifylline	all_hits	7	GO_Biological_Process_2023	Regulation Of cAMP-mediated Signaling (GO:0043949)	1.11e-06	PDE4D;PDE3B;PDE3A	EXPECTED(family)
+3TVX	Pentoxifylline	all_hits	7	GO_Biological_Process_2023	Negative Regulation Of Relaxation Of Muscle (GO:1901078)	2.73e-05	PDE4D;PDE4B	other
+3TVX	Pentoxifylline	all_hits	7	GO_Biological_Process_2023	Regulation Of Relaxation Of Cardiac Muscle (GO:1901897)	2.73e-05	PDE4D;PDE4B	other
+3TVX	Pentoxifylline	all_hits	7	GO_Biological_Process_2023	Regulation Of Actin Filament-Based Movement (GO:1903115)	7.85e-05	PDE4D;PDE4B	other
+3TVX	Pentoxifylline	all_hits	7	KEGG_2021_Human	Morphine addiction	6.80e-13	PDE4D;PDE3B;PDE4C;PDE3A;PDE4B;PDE8A	other
+3TVX	Pentoxifylline	all_hits	7	KEGG_2021_Human	Purine metabolism	2.90e-12	PDE4D;PDE3B;PDE4C;PDE3A;PDE4B;PDE8A	other
+3TVX	Pentoxifylline	all_hits	7	KEGG_2021_Human	cAMP signaling pathway	1.25e-08	PDE4D;PDE3B;PDE4C;PDE3A;PDE4B	EXPECTED(family)
+3TVX	Pentoxifylline	all_hits	7	KEGG_2021_Human	Parathyroid hormone synthesis, secretion and action	1.62e-05	PDE4D;PDE4C;PDE4B	other
+3TVX	Pentoxifylline	all_hits	7	KEGG_2021_Human	Renin secretion	6.33e-04	PDE3B;PDE3A	other
+3TVX	Pentoxifylline	all_hits	7	Reactome_2022	G Alpha (S) Signaling Events R-HSA-418555	8.65e-09	PDE4D;PDE3B;PDE4C;PDE3A;PDE8A	other
+3TVX	Pentoxifylline	all_hits	7	Reactome_2022	GPCR Downstream Signaling R-HSA-388396	4.97e-08	PDE4D;PDE3B;PDE4C;PDE3A;PDE4B;PDE8A	other
+3TVX	Pentoxifylline	all_hits	7	Reactome_2022	Signaling By GPCR R-HSA-372790	6.30e-08	PDE4D;PDE3B;PDE4C;PDE3A;PDE4B;PDE8A	other
+3TVX	Pentoxifylline	all_hits	7	Reactome_2022	DARPP-32 Events R-HSA-180024	2.25e-07	PDE4D;PDE4C;PDE4B	other
+3TVX	Pentoxifylline	all_hits	7	Reactome_2022	Opioid Signaling R-HSA-111885	9.67e-06	PDE4D;PDE4C;PDE4B	other
+6GH9	Mitoxantrone	all_hits	7	GO_Biological_Process_2023	Protein Deubiquitination (GO:0016579)	5.27e-15	USP17L17;USP5;USP17L19;USP10;USP22;USP1;USP19	EXPECTED(family)
+6GH9	Mitoxantrone	all_hits	7	GO_Biological_Process_2023	Protein Modification By Small Protein Removal (GO:0070646)	5.27e-15	USP17L17;USP5;USP17L19;USP10;USP22;USP1;USP19	other
+6GH9	Mitoxantrone	all_hits	7	GO_Biological_Process_2023	Regulation Of Cellular Response To Stress (GO:0080135)	1.11e-04	USP22;USP1;USP19	other
+6GH9	Mitoxantrone	all_hits	7	GO_Biological_Process_2023	Monoubiquitinated Protein Deubiquitination (GO:0035520)	8.96e-04	USP22;USP1	EXPECTED(family)
+6GH9	Mitoxantrone	all_hits	7	GO_Biological_Process_2023	Positive Regulation Of Cell Cycle (GO:0045787)	2.81e-03	USP22;USP19	other
+6GH9	Mitoxantrone	all_hits	7	KEGG_2021_Human	Fanconi anemia pathway	1.88e-02	USP1	other
+6GH9	Mitoxantrone	all_hits	7	Reactome_2022	Ub-specific Processing Proteases R-HSA-5689880	2.42e-08	USP17L17;USP5;USP17L19;USP22;USP19	other
+6GH9	Mitoxantrone	all_hits	7	Reactome_2022	Deubiquitination R-HSA-5688426	6.28e-08	USP17L17;USP5;USP17L19;USP22;USP19	EXPECTED(family)
+6GH9	Mitoxantrone	all_hits	7	Reactome_2022	Post-translational Protein Modification R-HSA-597592	1.17e-04	USP17L17;USP5;USP17L19;USP22;USP19	other
+6GH9	Mitoxantrone	all_hits	7	Reactome_2022	Metabolism Of Proteins R-HSA-392499	4.01e-04	USP17L17;USP5;USP17L19;USP22;USP19	other
+6GH9	Mitoxantrone	all_hits	7	Reactome_2022	Recognition Of DNA Damage By PCNA-containing Replication Complex R-HSA-110314	2.09e-02	USP1	other

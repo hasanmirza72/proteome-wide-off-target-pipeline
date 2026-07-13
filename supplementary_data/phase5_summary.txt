@@ -1,0 +1,46 @@
+======================================================================
+  PHASE 5 SUMMARY - biological-relevance probes (verdict table)
+======================================================================
+
+[A] STRUCTURAL HITS + ChEMBL BINDING  (probe: phase5_annotate)
+    hits: 58 (48 unique proteins)   within-family 50 | cross-family 8
+    binding: confirmed<=1uM 7 | weak 1-10uM 4 | tested-inactive 12 | untested 35
+    -> of 23 MEASURED hits, 7 are sub-uM binders (30% of testable)
+    tiers: T1(binding) 7 | T2(known target) 11 | T3(structural only) 40
+    VERDICT: strong per-hit confirmation (7 sub-uM binders); 12 tested-inactive honestly bound the false-positive rate.
+
+[B] KNOWN-POLYPHARMACOLOGY RECALL  (probe: phase5_recall)
+    overall recall@high: 8/26 = 0.31
+    high-recall drugs (family off-targets): 2XP2, 4U7Z, 3TVX
+    zero-recall drugs (fold-unrelated off-targets): 1XBB, 6YG2, 2Y05, 4R7L
+    VERDICT: recall high where documented off-targets share the query fold/family;
+             zero where they are unrelated folds (imatinib->ABL, vorinostat->HDAC).
+             This is the method's true scope, quantified - a defensible boundary.
+
+[C] FUNCTIONAL (PATHWAY/GO) ENRICHMENT  (probe: phase5_pathways)
+    enriched terms: all-hits 53 (EXPECTED/family 17 | other 36) | family-removed 0
+    VERDICT: positive control - all-hits enrichment recovers the query's own family
+             function (expected). Novelty needs family-removed terms; 0 found (sets usually too small).
+
+[D] ENRICHMENT vs MATCHED NULL  (probe: phase5_enrichment_null)
+    ALL_HITS                         n= 48  fold=5.11x  OR=6.64  Fisher p=2.567e-06  perm p=5e-05
+    FAMILY_REMOVED (cross-family)    n=  8  fold=0.00x  OR=1.04  Fisher p=1  perm p=1
+    VERDICT: all-hits enrichment expected (paralogs of a drug target);
+             family-removed is the novelty test (report n; underpowered if small).
+
+======================================================================
+  WHAT TO FEATURE (recommendation)
+======================================================================
+ HEADLINE (quantitative, defensible):
+   * ChEMBL binding [A]: N sub-uM confirmed off-targets incl. documented ones
+     (crizotinib->AURKA/YES1; selumetinib->MEK2; sulindac->AKR1B10).
+   * Recall [B]: high for family off-targets, zero for unrelated folds =
+     an honest statement of the method's scope.
+   * Enrichment vs null [D]: hits strongly enriched for drug targets over a
+     pocket-matched null (paralog-driven; state so).
+ SUPPORTING (positive control, not discovery):
+   * Pathway enrichment [C]: recovers expected family function; no novel
+     pathway survives family removal at this sample size.
+ CONSISTENT LIMITATION across all probes: validation is strong for
+   structurally-related (paralog/family) off-targets; the method does NOT
+   demonstrate fold-unrelated or novel polypharmacology on this benchmark.

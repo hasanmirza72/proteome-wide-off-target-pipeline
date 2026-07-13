@@ -1,0 +1,59 @@
+query_target	query_gene	query_uniprot	drug_name	drug_se_count	drug_source	hit_uniprot	hit_gene	family_class	idf	node_count	overlap_frac	confidence	chembl_target_id	is_known_drug_target	binding_status	best_activity_nM	activity_type	evidence_tier
+6VCJ	DHFR	P00374	Naproxen	0	openFDA	Q86XF0	DHFR2	within-family	35.3184	10	1.00	high		unknown	unknown			3_structural_only
+6VCJ	DHFR	P00374	Naproxen	0	openFDA	Q86XF0	DHFR2	within-family	11.3509	7	1.00	high		unknown	unknown			3_structural_only
+1UEI	UCK2	Q9BZX2	Uridine triphosphate	0	openFDA	Q9HA47	UCK1	within-family	93.5451	20	0.95	high	CHEMBL5682	no	no_measured_value			3_structural_only
+4U7Z	MAP2K1	Q02750	Selumetinib	0	openFDA	P36507	MAP2K2	within-family	44.9277	15	0.36	high	CHEMBL2964	yes	confirmed	52.0	Kd	1_binding_confirmed
+4U7Z	MAP2K1	Q02750	Selumetinib	0	openFDA	Q96KB5	PBK	within-family	6.4812	8	0.56	high	CHEMBL4896	no	no_measured_value			3_structural_only
+4U7Z	MAP2K1	Q02750	Selumetinib	0	openFDA	Q16512	PKN1	within-family	3.9843	8	0.33	high	CHEMBL3384	no	tested_inactive	10000.0	Kd	3_structural_only
+1XBB	SYK	P43405	Imatinib	323	SIDER	Q02779	MAP3K10	within-family	7.9077	9	0.32	high	CHEMBL2873	yes	weak	3162.3	Ki	2_known_drug_target
+1XBB	SYK	P43405	Imatinib	323	SIDER	O43283	MAP3K13	within-family	7.8717	10	0.50	high	CHEMBL1163124	yes	tested_inactive	10000.0	Kd	2_known_drug_target
+1XBB	SYK	P43405	Imatinib	323	SIDER	O14733	MAP2K7	within-family	7.1972	10	0.33	high	CHEMBL3530	no	tested_inactive	10000.0	Kd	3_structural_only
+1XBB	SYK	P43405	Imatinib	323	SIDER	P31749	AKT1	within-family	6.4186	9	0.32	high	CHEMBL4282	yes	weak	7943.3	Ki	2_known_drug_target
+1XBB	SYK	P43405	Imatinib	323	SIDER	O96017	CHEK2	within-family	5.9418	9	0.39	high	CHEMBL2527	yes	weak	5011.9	Ki	2_known_drug_target
+1XBB	SYK	P43405	Imatinib	323	SIDER	Q02750	MAP2K1	within-family	5.4826	9	0.38	high	CHEMBL3587	yes	weak	3162.3	Ki	2_known_drug_target
+1XBB	SYK	P43405	Imatinib	323	SIDER	Q8IY84	NIM1K	within-family	8.1732	10	0.35	high	CHEMBL3542	no	tested_inactive	10000.0	Kd	3_structural_only
+1XBB	SYK	P43405	Imatinib	323	SIDER	Q8NFD2	ANKK1	within-family	6.1078	11	0.50	high	CHEMBL5547	no	tested_inactive	10000.0	Kd	3_structural_only
+1XBB	SYK	P43405	Imatinib	323	SIDER	O94768	STK17B	within-family	6.0513	10	0.62	high	CHEMBL3980	no	tested_inactive	10000.0	Kd	3_structural_only
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q08499	PDE4D	within-family	10.8363	8	1.00	high	CHEMBL288	yes	no_measured_value			2_known_drug_target
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q08493	PDE4C	within-family	10.3215	8	0.80	high	CHEMBL291	no	no_measured_value			3_structural_only
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q07343	PDE4B	within-family	9.0094	8	0.80	high	CHEMBL275	no	tested_inactive	90000.0	IC50	3_structural_only
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	O60658	PDE8A	within-family	6.0104	7	0.35	high	CHEMBL4640	no	no_measured_value			3_structural_only
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q14432	PDE3A	within-family	4.2581	6	0.46	high	CHEMBL241	yes	no_measured_value			2_known_drug_target
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q13370	PDE3B	within-family	3.5525	6	0.75	high	CHEMBL290	no	no_measured_value			3_structural_only
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q08499	PDE4D	within-family	10.9810	8	1.00	high	CHEMBL288	yes	no_measured_value			2_known_drug_target
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q07343	PDE4B	within-family	9.6003	8	0.80	high	CHEMBL275	no	tested_inactive	90000.0	IC50	3_structural_only
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q08493	PDE4C	within-family	9.2467	8	0.80	high	CHEMBL291	no	no_measured_value			3_structural_only
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	O60658	PDE8A	within-family	6.4024	7	0.37	high	CHEMBL4640	no	no_measured_value			3_structural_only
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q14432	PDE3A	within-family	4.2150	6	0.46	high	CHEMBL241	yes	no_measured_value			2_known_drug_target
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q13370	PDE3B	within-family	3.6470	6	0.50	high	CHEMBL290	no	no_measured_value			3_structural_only
+3TVX	PDE4A	P27815	Pentoxifylline	94	SIDER	Q9H7Z6	KAT8	cross-family	3.3476	7	0.44	high	CHEMBL1932912	no	no_measured_value			3_structural_only
+3RX3	AKR1B1	P15121	Sulindac	0	openFDA	O60218	AKR1B10	within-family	17.7642	8	1.00	high	CHEMBL5983	no	confirmed	350.0	IC50	1_binding_confirmed
+3RX3	AKR1B1	P15121	Sulindac	0	openFDA	P52895	AKR1C2	within-family	3.5158	4	0.57	high	CHEMBL5847	no	no_measured_value			3_structural_only
+3RX3	AKR1B1	P15121	Sulindac	0	openFDA	Q5T2L2	AKR1C8	within-family	3.5247	6	0.44	high		unknown	unknown			3_structural_only
+5V1M	USB1	Q9BQ65	Uridine monophosphate	0	openFDA	P20718	GZMH	cross-family	3.0208	5	0.50	high		unknown	unknown			3_structural_only
+6Q6O	RORC	P51449	Cholic acid	0	openFDA	Q5TGU0	TSPO2	cross-family	3.6692	6	0.30	high		unknown	unknown			3_structural_only
+6GH9	USP15	Q9Y4E8	Mitoxantrone	158	SIDER	O94966	USP19	within-family	4.0850	6	0.50	high	CHEMBL4523156	no	no_measured_value			3_structural_only
+6GH9	USP15	Q9Y4E8	Mitoxantrone	158	SIDER	O94966	USP19	within-family	6.3103	7	0.71	high	CHEMBL4523156	no	no_measured_value			3_structural_only
+6GH9	USP15	Q9Y4E8	Mitoxantrone	158	SIDER	D6RCP7	USP17L19	within-family	6.1363	5	0.67	high		unknown	unknown			3_structural_only
+6GH9	USP15	Q9Y4E8	Mitoxantrone	158	SIDER	D6RBQ6	USP17L17	within-family	6.1363	5	0.67	high		unknown	unknown			3_structural_only
+6GH9	USP15	Q9Y4E8	Mitoxantrone	158	SIDER	Q9UPT9	USP22	within-family	5.2099	6	0.67	high	CHEMBL5291597	no	no_measured_value			3_structural_only
+6GH9	USP15	Q9Y4E8	Mitoxantrone	158	SIDER	O94782	USP1	within-family	4.1781	5	0.67	high	CHEMBL1795087	no	no_measured_value			3_structural_only
+6GH9	USP15	Q9Y4E8	Mitoxantrone	158	SIDER	Q14694	USP10	within-family	3.7201	4	0.83	high	CHEMBL3407323	no	no_measured_value			3_structural_only
+6GH9	USP15	Q9Y4E8	Mitoxantrone	158	SIDER	P45974	USP5	within-family	3.1485	7	0.36	high	CHEMBL6158	no	no_measured_value			3_structural_only
+2XP2	ALK	Q9UM73	Crizotinib	0	openFDA	P42685	FRK	within-family	19.3406	12	0.34	high	CHEMBL4223	yes	confirmed	1000.0	IC50	1_binding_confirmed
+2XP2	ALK	Q9UM73	Crizotinib	0	openFDA	Q9H3Y6	SRMS	within-family	16.5166	13	0.32	high	CHEMBL5703	no	tested_inactive	10000.0	Kd	3_structural_only
+2XP2	ALK	Q9UM73	Crizotinib	0	openFDA	Q9Y2U5	MAP3K2	within-family	13.7537	13	0.32	high	CHEMBL5914	no	confirmed	72.0	Kd	1_binding_confirmed
+2XP2	ALK	Q9UM73	Crizotinib	0	openFDA	O14965	AURKA	within-family	12.4980	11	0.37	high	CHEMBL4722	yes	confirmed	89.2	Kd	1_binding_confirmed
+2XP2	ALK	Q9UM73	Crizotinib	0	openFDA	P42685	FRK	within-family	16.2412	13	0.37	high	CHEMBL4223	yes	confirmed	1000.0	IC50	1_binding_confirmed
+2XP2	ALK	Q9UM73	Crizotinib	0	openFDA	Q13882	PTK6	within-family	14.9313	12	0.36	high	CHEMBL4601	yes	tested_inactive	10000.0	Kd	2_known_drug_target
+2XP2	ALK	Q9UM73	Crizotinib	0	openFDA	P07947	YES1	within-family	10.8339	11	0.42	high	CHEMBL2073	yes	confirmed	100.0	IC50	1_binding_confirmed
+2XP2	ALK	Q9UM73	Crizotinib	0	openFDA	P21802	FGFR2	within-family	10.6399	10	0.56	high	CHEMBL4142	yes	tested_inactive	10000.0	Kd	2_known_drug_target
+2XP2	ALK	Q9UM73	Crizotinib	0	openFDA	Q13163	MAP2K5	within-family	9.8062	12	0.42	high	CHEMBL4948	no	tested_inactive	10000.0	Kd	3_structural_only
+6YG2	MAP2K7	O14733	Ibrutinib	0	openFDA	O95711	LY86	cross-family	4.9763	7	0.50	high		unknown	unknown			3_structural_only
+6YG2	MAP2K7	O14733	Ibrutinib	0	openFDA	Q02338	BDH1	cross-family	4.3841	9	0.33	high		unknown	unknown			3_structural_only
+4ODR	FKBP1A	P62942	Tacrolimus	0	openFDA	Q5VVH2	FKBP1C	within-family	22.5480	8	0.88	high		unknown	unknown			3_structural_only
+4ODR	FKBP1A	P62942	Tacrolimus	0	openFDA	P68106	FKBP1B	within-family	8.4706	5	0.80	high	CHEMBL2430	no	no_measured_value			3_structural_only
+4ODR	FKBP1A	P62942	Tacrolimus	0	openFDA	Q5VVH2	FKBP1C	within-family	6.3593	4	0.80	high		unknown	unknown			3_structural_only
+4R7L	LTA4H	P09960	Vorinostat	62	SIDER	Q9BQ65	USB1	cross-family	3.9203	7	0.33	high		unknown	unknown			3_structural_only
+9XRI	NUDT1	P36639	Acoramidis	0	openFDA	Q96T53	MBOAT4	cross-family	3.6488	7	0.31	high	CHEMBL3588729	no	no_measured_value			3_structural_only
+9XRI	NUDT1	P36639	Acoramidis	0	openFDA	Q8NGB9	OR4F6	cross-family	3.1531	5	0.33	high		unknown	unknown			3_structural_only

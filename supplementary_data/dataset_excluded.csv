@@ -1,0 +1,8 @@
+holo_pdb,apo_pdb,stage,reason
+5HES,5X5O,curation,A:low TM (0.49); A:low mapped% (4.0)
+4ORU,4OS3,curation,A:low TM (0.48); A:low mapped% (54.3)
+1TEQ,9KI2,curation,A:non-drug ligand 'OH'; A:ligand too small (1 atoms)
+1AM6,9KI3,curation,A:ligand too small (5 atoms)
+2GEH,6LUU,curation,A:ligand too small (5 atoms)
+3O5F,3O5Q,curation,A:non-drug ligand 'CO3'; A:ligand too small (4 atoms)
+4N1M,5F66,curation,A:non-drug ligand 'GLY'
