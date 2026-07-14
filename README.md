@@ -92,6 +92,7 @@ proteome-offtarget-pipeline/
 │   │
 │   ├── 04_filter/                # 🧪 Pocket support and confidence tiers
 │   │   └── offtarget_overlap_filter.py  # 1,107 raw -> 681 supported -> 58 high-confidence
+│   │   └── sensitivity_analysis.py      # Threshold sensitivity: how the 58 responds to each cutoff
 │   │
 │   ├── 05_analysis/              # 📐 Conformational analysis
 │   │   ├── dual_query_divergence.py   # Holo/apo hit-list divergence (Spearman + permutation)
@@ -165,7 +166,7 @@ Each drug supplies a query defined by its ligand-contact residues (within 4.0 Å
 
 ### 🧪 5.4 Filtering to high-confidence candidates
 
-FoldDisco's raw matches pass through P2Rank as an orthogonal filter: only matches whose residues fall inside a genuine predicted cavity are retained, then a confidence tier reduces the set further. The funnel runs **1,107 raw -> 681 pocket-supported -> 58 high-confidence** candidates.
+FoldDisco's raw matches pass through P2Rank as an orthogonal filter: only matches whose residues fall inside a genuine predicted cavity are retained, then a confidence tier reduces the set further. The funnel runs **1,107 raw -> 681 pocket-supported -> 58 high-confidence** candidates. The confidence tier requires at least four matched residues, at least three inside the pocket, an overlap fraction of at least 0.30, an RMSD at or below 2.0 Å, and a FoldDisco IDF of at least 3.0. A threshold sensitivity analysis (scripts/04_filter/sensitivity_analysis.py) confirms the count responds smoothly to each threshold, with the chosen values sitting in the interior of each range rather than at a cliff edge.
 
 ### 🔬 5.5 Biological validation
 
