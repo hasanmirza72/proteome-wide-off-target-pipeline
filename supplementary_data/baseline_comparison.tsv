@@ -1,0 +1,4 @@
+Method	Recall @10	Recall @30	Recall @100	Median rank
+FoldDisco	8	8	10	5
+BLAST	7	9	14	10.5
+Foldseek	5	9	14	12.5

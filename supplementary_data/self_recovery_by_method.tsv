@@ -1,0 +1,4 @@
+Method	Median self-rank	Rank 1 (n)	Top 5 (n)	Not returned (n)
+FoldDisco	1	16	22	0
+Foldseek	1	21	23	0
+BLAST	1	23	23	0
