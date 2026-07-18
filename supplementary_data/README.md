@@ -60,6 +60,10 @@ or comma-separated (`.csv`) table that opens in Excel, R, Python, or any text ed
 |------|-------------|------------------|
 | `blast_hits.tsv` | BLAST+ sequence-similarity baseline results | Tables 11-12 |
 | `foldseek_hits.tsv` | Foldseek structure-similarity baseline results | Tables 11-12 |
+| `self_recovery_by_method.tsv` | Self-recovery of all 23 targets per method (median self-rank, count at rank 1, top 5, not returned) | Table 9 |
+| `self_recovery_hard_targets.tsv` | Self-rank of the seven detection-hard targets, per method | Table 10 |
+| `baseline_comparison.tsv` | Documented off-target recall by method at rank cutoffs 10, 30, 100, with median rank of recovered targets | Table 11 | 
+| `baseline_split.tsv`| That recall@100 split into three tiers by the off-target's structural relationship to the query pocket | Table 12 |
 
 ## File formats
 
