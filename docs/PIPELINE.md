@@ -64,6 +64,7 @@ Produces: `offtarget_hits_bioannotated.tsv`, `phase5_recall.tsv`, `phase5_enrich
 python scripts/07_baselines/blast_foldseek_rebuild_queries_canonical.py
 bash   scripts/07_baselines/run_blast.sh
 bash   scripts/07_baselines/run_foldseek.sh
+python scripts/07_baselines/score_baselines.py
 ```
 Produces: `blast_hits.tsv`, `foldseek_hits.tsv`.
 
