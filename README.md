@@ -198,19 +198,19 @@ Pocket detection collapses in the unbound state: **holo 82.6%** versus **apo 69.
 
 ### 🎯 6.3 Recall of documented off-targets
 
-FoldDisco's high-confidence recall of documented off-targets is governed by fold-relatedness. Off-targets that share the query protein's family are recovered; those that occupy an unrelated fold are missed. Overall high-confidence recall is **8 of 26** documented off-targets.
+FoldDisco's high-confidence recall of documented off-targets is governed by pocket similarity. Off-targets that share the query's binding pocket are recovered; those that do not are missed, even when they share the same fold. Overall high-confidence recall is **8 of 26** documented off-targets.
 
 ![Recall by fold-relatedness](scripts/figures/figures/fig7_recall_split.png)
 
-> **Figure 3.** FoldDisco high-confidence recall of documented off-targets, split by fold-relatedness. Each bar shows found/total per drug. Off-targets that share the query's family are recovered (for example pentoxifylline 3/3, selumetinib 1/1); those on unrelated folds are missed (imatinib 0/4, ibrutinib 0/4). Overall high-confidence recall is 8/26.
+> **Figure 3.** Off-targets that share the query's pocket are recovered (for example pentoxifylline 3/3, selumetinib 1/1); those that do not are missed, even within the same fold (imatinib 0/4, ibrutinib 0/4). Overall high-confidence recall is 8/26.
 
 ### ⚖️ 6.4 Baseline comparison against BLAST and Foldseek
 
-The pipeline is benchmarked against two established sequence- and structure-similarity methods, BLAST+ and Foldseek. The three prove **complementary rather than competitive**: FoldDisco ranks pocket-similar off-targets highest, while sequence and structure search give broader fold-level recall. Critically, at recall@100 **all three methods recover zero fold-unrelated off-targets**, a biological boundary that is method-independent rather than a limitation specific to this pipeline. The comparison establishes complementarity, not superiority; FoldDisco is best read as a precision-oriented addition to sequence and structure search, not a replacement for them.
+The pipeline is benchmarked against two established sequence- and structure-similarity methods, BLAST+ and Foldseek. The three are **complementary rather than competitive**: FoldDisco ranks pocket-similar off-targets highest, while sequence and structure search give broader fold-level recall. Critically, at recall@100 **all three methods recover zero fold-unrelated off-targets**, a biological boundary that is method-independent rather than a limitation specific to this pipeline. The comparison establishes complementarity, not superiority; FoldDisco is best read as a precision-oriented addition to sequence and structure search, not a replacement for them.
 
 ![Baseline recall](scripts/figures/figures/fig10_baseline_recall.png)
 
-> **Figure 4.** Documented off-target recall by method at three rank cutoffs (of 26 documented targets). FoldDisco leads at the top of the ranked list (8 at recall@10 versus 7 and 5), while BLAST and Foldseek recover more deeper down (14 each at recall@100 versus 11). The methods are complementary: FoldDisco favours precision, the global methods favour breadth.
+> **Figure 4.** Documented off-target recall by method at three rank cutoffs (of 26 documented targets). FoldDisco leads at the top of the ranked list (8 at recall@10 versus 7 and 5), while BLAST and Foldseek recover more deeper down (14 each at recall@100 versus 10). The methods are complementary: FoldDisco favours precision, the global methods favour breadth.
 
 ---
 
@@ -222,10 +222,11 @@ Exact versions are documented for full reproducibility. Live web services were q
 |------|---------|------|
 | FoldDisco | commit de68e15 | structural motif search |
 | P2Rank | 2.4.2 | pocket detection and filter |
-| BLAST+ | 2.17.0 | sequence baseline |
+| BLAST+ | 2.17.0+ | sequence baseline |
 | Foldseek | 10 (10.941cd33) | structure baseline |
 | PyMOL | 3.1.0 | structural superposition |
-| Python | 3.x (numpy 2.2.6, pandas 2.3.3, biopython 1.87) | pipeline and statistics |
+| Python | 3.6.8 (Numpy 2.2.6, Pandas 2.3.3, Biopython 1.87) | pipeline and statistics |
+| Matplotlib | 3.10.8 | figure rendering
 
 **Databases:** AlphaFold DB (file v6), RCSB PDB, ChEMBL, UniProt (2025), PubChem, SIDER 4, openFDA, and Enrichr (GO_Biological_Process_2023, KEGG_2021_Human, Reactome_2022).
 
@@ -257,18 +258,18 @@ The datasets underlying every table and figure in the thesis are provided under 
 
 | File | Description | Thesis reference |
 |------|-------------|------------------|
-| `dataset_final_nonredundant.csv` | The 23 non-redundant benchmark targets | Table 1, Table 4 |
+| `dataset_final_nonredundant.csv` | The 23 non-redundant benchmark targets | Table 4 |
 | `dataset_excluded.csv` | Curation exclusions with reasons | Table 2 |
 | `p2rank_evaluation.csv` | Per-target P2Rank detection (holo and apo) | Table 3, Table 4 |
-| `self_recovery_summary.tsv` | FoldDisco self-recovery ranks | Table 15, Table 16 |
-| `folddisco_raw_hits.tsv` | All raw FoldDisco geometric matches | Chapter 4 |
-| `offtarget_hits_high.tsv` | The 58 high-confidence candidates | Table 7, Table 13 |
-| `offtarget_hits_bioannotated.tsv` | High-confidence hits with ChEMBL annotation | Table 8, Table 9 |
-| `dual_query_divergence.tsv` | Holo/apo divergence vs conformational axes | Table 5, Figure 4 |
-| `phase5_recall.tsv` | Documented off-target recall | Table 10, Table 17 |
-| `phase5_enrichment_null.tsv` | Enrichment against a matched null | Table 11 |
-| `phase5_pathways.tsv` | GO / KEGG / Reactome enrichment | Table 12 |
-| `blast_hits.tsv`, `foldseek_hits.tsv` | Baseline comparison results | Tables 15-18 |
+| `self_recovery_summary.tsv` | FoldDisco self-recovery ranks | Table 9, Table 10 |
+| `folddisco_raw_hits.tsv` | All raw FoldDisco geometric matches | Section 5.2 |
+| `offtarget_hits_high.tsv` | The 58 high-confidence candidates | Table 7, Table 8 |
+| `offtarget_hits_bioannotated.tsv` | High-confidence hits with ChEMBL annotation | Table 13, Table 14 |
+| `dual_query_divergence.tsv` | Holo/apo divergence vs conformational axes | Table 5, Figure 3-4 |
+| `phase5_recall.tsv` | Documented off-target recall | Table 15 |
+| `phase5_enrichment_null.tsv` | Enrichment against a matched null | Table 16 |
+| `phase5_pathways.tsv` | GO / KEGG / Reactome enrichment | Table 17 |
+| `blast_hits.tsv`, `foldseek_hits.tsv` | Baseline comparison results | Tables 11-12 |
 
 All files are plain tab- or comma-separated tables that open in Excel, R, or Python. Large binary inputs (structures, search indexes, API caches) are excluded by design and are regenerable from the pipeline.
 
