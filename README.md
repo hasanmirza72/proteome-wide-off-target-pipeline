@@ -109,7 +109,8 @@ proteome-offtarget-pipeline/
 │   │   ├── run_blast.sh               # BLAST+ sequence-similarity baseline
 │   │   ├── run_foldseek.sh            # Foldseek structure-similarity baseline
 │   │   └── extract_raw_ranks.py       # Raw FoldDisco ranks for a fair comparison
-│   │
+│   |   └──score_baselines.py          # Computes the FoldDisco/BLAST/Foldseek baseline comparison
+|   |
 │   ├── figures/                  # 📊 Figure generation
 │   ├── utils/                    # 🧰 Audit and verification helpers
 │   └── archive/                  # 🗃️ Superseded iterations (kept for provenance)
