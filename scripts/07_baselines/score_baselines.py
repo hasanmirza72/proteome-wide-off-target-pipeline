@@ -8,8 +8,8 @@ recall by the off-target's structural relationship to the query pocket.
 
 Inputs (from the project root):
     folddisco_raw_hits.tsv          FoldDisco raw ranked hits (from extract_raw_ranks.py)
-    blast_hits_corrected.tsv        BLAST+ hits    (from run_blast.sh, canonical queries)
-    foldseek_hits_corrected.tsv     Foldseek hits  (from run_foldseek.sh, canonical queries)
+    blast_hits.tsv        BLAST+ hits    (from run_blast.sh, canonical queries)
+    foldseek_hits.tsv     Foldseek hits  (from run_foldseek.sh, canonical queries)
 
 Outputs (all also printed):
     self_recovery_by_method.tsv     self-recovery of all 23 targets, per method
@@ -48,9 +48,6 @@ HARD = [("6YG2","MEK7"), ("1NHZ","GR (NR3C1)"), ("4U7Z","MEK1"), ("6GH9","USP15"
 #   pocket_similar : shares local binding-site geometry / same enzyme family
 #   fold_unrelated : occupies a fold unrelated to the query pocket
 KNOWN = {
- # tier: pocket_similar     = shares local binding-site geometry with the query
- #       fold_pocket_diff   = same broad family/fold, but the pocket itself differs
- #       fold_unrelated     = occupies a fold unrelated to the query pocket
  "2XP2": {"P08581":"pocket_similar","P07947":"pocket_similar","O14965":"pocket_similar"},
  "1XBB": {"P00519":"fold_pocket_diff","P10721":"fold_pocket_diff",
           "P16234":"fold_pocket_diff","Q08345":"fold_pocket_diff"},
