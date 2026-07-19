@@ -36,7 +36,7 @@ Column definitions for the main supplementary data tables.
 | `idf`, `node_count`, `overlap_frac`, `confidence` | as in the high-confidence table |
 | `chembl_target_id` | ChEMBL target identifier, if the hit is in ChEMBL |
 | `is_known_drug_target` | whether ChEMBL lists the hit as a known drug target |
-| `binding_status` | confirmed, weak, tested-inactive, no-measured-value, or unknown |
+| `binding_status` | confirmed, weak, tested_inactive, no_measured_value, or unknown |
 | `best_activity_nM` | best measured potency in nanomolar, if any |
 | `activity_type` | assay type of the best measurement (Ki, Kd, IC50, EC50) |
 | `evidence_tier` | 1 = confirmed binding, 2 = known target, 3 = structural only |
@@ -65,10 +65,10 @@ Column definitions for the main supplementary data tables.
 
 ## blast_hits.tsv — BLAST+ baseline (custom outfmt 6, 6 columns)
 
-Columns, in order: query accession, subject accession, percent identity, alignment length, E-value, bit score.
+Columns, in order (qseqid sseqid pident qcovs evalue bitscore): query accession, subject accession, percent identity, query coverage per subject (%), 
+E-value, bit score.
 
 ## foldseek_hits.tsv — Foldseek baseline (custom format-output, 8 columns)
 
-Columns follow the Foldseek tabular output: query accession, target accession, E-value,
-alignment bit score, sequence identity, and the three structural similarity measures
-(query/target coverage and TM-score).
+Columns, in order (query,target,evalue,bits,alntmscore,fident,qcov,tcov): query accession, target accession, E-value, 
+bit score, alignment TM-score, sequence identity (fraction), query coverage (fraction), target coverage (fraction).
