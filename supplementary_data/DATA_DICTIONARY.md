@@ -63,12 +63,11 @@ Column definitions for the main supplementary data tables.
 | `hit_uniprot` | UniProt accession of the matched protein |
 | `idf` | FoldDisco IDF score for the match |
 
-## blast_hits.tsv — BLAST+ baseline (standard outfmt 6)
+## blast_hits.tsv — BLAST+ baseline (custom outfmt 6, 6 columns)
 
-Columns are the standard BLAST tabular format: query accession, subject accession,
-percent identity, alignment length, E-value, and bit score.
+Columns, in order: query accession, subject accession, percent identity, alignment length, E-value, bit score.
 
-## foldseek_hits.tsv — Foldseek baseline
+## foldseek_hits.tsv — Foldseek baseline (custom format-output, 8 columns)
 
 Columns follow the Foldseek tabular output: query accession, target accession, E-value,
 alignment bit score, sequence identity, and the three structural similarity measures
