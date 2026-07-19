@@ -1,7 +1,7 @@
 # Results
 
 These are the small result tables reported in the thesis, provided so the numbers can be
-inspected without re-running the full pipeline. Place your actual result files here:
+inspected without re-running the full pipeline.
 
 - dataset_final_nonredundant.csv   (23 benchmark targets)
 - self_recovery_summary.tsv        (FoldDisco self-recovery)
