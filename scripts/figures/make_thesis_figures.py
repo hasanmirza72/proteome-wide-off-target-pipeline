@@ -8,6 +8,23 @@ its own airspace so nothing overlaps. All numbers hard-coded from the real
 Phase 1-5 results.
 
 Run:  python3 make_thesis_figures.py   ->   ./figures/*.png  (300 dpi)
+
+Output filenames are numbered to match the THESIS figure numbers (not the internal
+function order). Mapping:
+
+    function      thesis figure   output file
+    fig1()        Figure 2        figure_02_detection_asymmetry.png
+    fig2()        Figure 6        figure_06_funnel.png
+    fig3()        Figure 5        figure_05_self_recovery.png
+    fig4()        Figure 3        figure_03_conformational_axes.png
+    fig5()        Figure 4        figure_04_dual_query_divergence.png
+    fig6()        Figure 7        figure_07_chembl_binding.png
+    fig7()        Figure 8        figure_08_recall_split.png
+    fig8()        Figure 9        figure_09_enrichment_null.png
+    fig9()        Figure 10       figure_10_convergence.png
+
+(Figure 1, the pipeline workflow, is produced by make_workflow_figure.py; the
+baseline-recall figure used in the repo README is produced separately.)
 """
 import os
 import numpy as np
@@ -82,7 +99,7 @@ def fig1():
             transform=ax.transAxes, ha="center", fontsize=10, style="italic", color=P["b"])
     ax.legend(loc="lower center", ncol=2, frameon=True, fontsize=10.5, bbox_to_anchor=(0.5, -0.22))
     ax.grid(axis="x", alpha=0)
-    save(fig, "fig1_detection_asymmetry")
+    save(fig, "figure_02_detection_asymmetry")
 
 # ---------------------------------------------------------------- FIG 2 (teal->sand funnel)
 def fig2():
@@ -108,7 +125,7 @@ def fig2():
     ax.set_yticks([]); ax.set_xlim(-30, maxv+360); ax.set_ylim(-0.7, 2.95); ax.grid(False)
     ax.set_xlabel("Number of hits")
     ax.set_title("Off-target funnel \u2014 a ~20-fold concentration to 58 candidates", color=P["ink"], pad=14)
-    save(fig, "fig2_funnel")
+    save(fig, "figure_06_funnel")
 
 # ---------------------------------------------------------------- FIG 3 (violet ladder)
 def fig3():
@@ -142,7 +159,7 @@ def fig3():
     ax2.set_xlim(-3.4, 30); ax2.set_xlabel("P2Rank DCA (\u00c5) \u2014 higher = worse detection")
     ax2.grid(axis="y", alpha=0)
     ax2.set_title("The seven sites P2Rank misses are all\nrecovered by FoldDisco (blue circle = self-rank)", color=P["ink"], pad=12)
-    save(fig, "fig3_self_recovery")
+    save(fig, "figure_05_self_recovery")
 
 # ---------------------------------------------------------------- FIG 4 (viridis, callouts parked)
 def fig4():
@@ -180,7 +197,7 @@ def fig4():
     ax.set_xlim(1.06, 0.38); ax.set_ylim(0.0, 3.5)
     ax.set_title("Three axes of conformational change disagree \u2014 informatively", color=P["ink"], pad=14)
     cb = plt.colorbar(sc, pad=0.02); cb.set_label("Backbone RMSD (\u00c5)")
-    save(fig, "fig4_conformational_axes")
+    save(fig, "figure_03_conformational_axes")
 
 # ---------------------------------------------------------------- FIG 5 (slate/terracotta/teal + plum)
 def fig5():
@@ -202,7 +219,7 @@ def fig5():
     leg = [Patch(color=P["b1"], label="Jaccard < 0.10"), Patch(color=P["b2"], label="0.10\u20130.20"),
            Patch(color=P["b3"], label="> 0.20")]
     ax1.legend(handles=leg, loc="upper left", frameon=True, fontsize=8.5)
-    axes = ["spatial\noverlap", "backbone\nRMSD", "pocket\nRMSD"]; rho = [0.094, -0.482, -0.251]; pv = [0.783, 0.133, 0.457]
+    axes = ["spatial\noverlap", "backbone\nRMSD", "pocket\nRMSD"]; rho = [0.094, -0.482, -0.251]; pv = [0.782, 0.139, 0.457]
     bcol = [P["sig"] if p < 0.05 else P["nsig"] for p in pv]; yy = np.arange(3)[::-1]
     ax2.barh(yy, rho, color=bcol, edgecolor="white", lw=1.6, zorder=3, height=0.6)
     ax2.axvline(0, color=P["ink"], lw=1.2)
@@ -215,7 +232,7 @@ def fig5():
     ax2.set_title("Divergence is not explained by\npocket movement (all correlations n.s.)", color=P["ink"], pad=12)
     ax2.text(0.5, -0.22, "faded bars = not significant", transform=ax2.transAxes,
              ha="center", fontsize=9, style="italic", color=P["nsig"])
-    save(fig, "fig5_dual_query_divergence")
+    save(fig, "figure_04_dual_query_divergence")
 
 # ---------------------------------------------------------------- FIG 6 (donut label fixed)
 def fig6():
@@ -251,7 +268,7 @@ def fig6():
     ax2.set_title("Seven confirmed sub-micromolar off-targets", color=P["ink"], pad=18)
     ax2.text(1.0, 1.0, "incl. documented crizotinib targets AURKA + YES1",
              transform=ax2.transAxes, ha="right", fontsize=9, style="italic", color=P["bar"])
-    save(fig, "fig6_chembl_binding")
+    save(fig, "figure_07_chembl_binding")
 
 # ---------------------------------------------------------------- FIG 7 (cream track, no grey)
 def fig7():
@@ -289,7 +306,7 @@ def fig7():
     leg = [Patch(color=P["fam"], label="Recovered @ high confidence"),
            Patch(color=P["tot"], label="Total documented")]
     ax.legend(handles=leg, loc="lower center", bbox_to_anchor=(0.5, -0.20), ncol=2, frameon=True, fontsize=9.5)
-    save(fig, "fig7_recall_split")
+    save(fig, "figure_08_recall_split")
 
 # ---------------------------------------------------------------- FIG 8 (sage/plum/red)
 def fig8():
@@ -308,7 +325,7 @@ def fig8():
     ax.set_title("Hits are enriched 5.1\u00d7 for known drug targets", color=P["ink"], pad=16)
     ax.text(0.5, 1.0, "paralogue-driven \u2014 the family-removed set is null",
             transform=ax.transAxes, ha="center", fontsize=9.5, style="italic", color=P["null"])
-    save(fig, "fig8_enrichment_null")
+    save(fig, "figure_09_enrichment_null")
 
 # ---------------------------------------------------------------- FIG 9 (pine/apricot)
 def fig9():
@@ -340,7 +357,7 @@ def fig9():
     for s in ax2.spines.values(): s.set_visible(False)
     ax2.set_title("All four probes agree: signal is within-family,\nno novel cross-family biology",
                   color=P["ink"], pad=12)
-    save(fig, "fig9_family_split_verdict")
+    save(fig, "figure_10_convergence")
 
 FIGS = [fig1, fig2, fig3, fig4, fig5, fig6, fig7, fig8, fig9]
 if __name__ == "__main__":
