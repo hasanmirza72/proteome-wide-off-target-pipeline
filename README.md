@@ -46,7 +46,7 @@ pip install -r requirements.txt
 Four external tools must be installed separately and available on your `PATH`. Their exact versions are documented in Section 7.
 
 ```
-FoldDisco (commit de68e15)   ·   P2Rank 2.4.2   ·   BLAST+ 2.17.0   ·   Foldseek 10
+FoldDisco (commit de68e15)   ·   P2Rank 2.4.2   ·   BLAST+ 2.17.0+   ·   Foldseek 10
 ```
 
 ### 📊 Data staging
@@ -109,7 +109,7 @@ proteome-offtarget-pipeline/
 │   │   ├── run_blast.sh               # BLAST+ sequence-similarity baseline
 │   │   ├── run_foldseek.sh            # Foldseek structure-similarity baseline
 │   │   └── extract_raw_ranks.py       # Raw FoldDisco ranks for a fair comparison
-│   |   └──score_baselines.py          # Computes the FoldDisco/BLAST/Foldseek baseline comparison
+│   |   └── score_baselines.py         # Computes the FoldDisco/BLAST/Foldseek baseline comparison
 |   |
 │   ├── figures/                  # 📊 Figure generation
 │   ├── utils/                    # 🧰 Audit and verification helpers
@@ -226,7 +226,7 @@ Exact versions are documented for full reproducibility. Live web services were q
 | BLAST+ | 2.17.0+ | sequence baseline |
 | Foldseek | 10 (10.941cd33) | structure baseline |
 | PyMOL | 3.1.0 | structural superposition |
-| Python | 3.6.8 (Numpy 2.2.6, Pandas 2.3.3, Biopython 1.87) | pipeline and statistics |
+| Python | 3.12.x (Numpy 2.2.6, Pandas 2.3.3, Biopython 1.87) | pipeline and statistics |
 | Matplotlib | 3.10.8 | figure rendering
 
 **Databases:** AlphaFold DB (file v6), RCSB PDB, ChEMBL, UniProt (2025), PubChem, SIDER 4, openFDA, and Enrichr (GO_Biological_Process_2023, KEGG_2021_Human, Reactome_2022).
@@ -266,7 +266,7 @@ The datasets underlying every table and figure in the thesis are provided under 
 | `folddisco_raw_hits.tsv` | All raw FoldDisco geometric matches | Section 5.2 |
 | `offtarget_hits_high.tsv` | The 58 high-confidence candidates | Table 7, Table 8 |
 | `offtarget_hits_bioannotated.tsv` | High-confidence hits with ChEMBL annotation | Table 13, Table 14 |
-| `dual_query_divergence.tsv` | Holo/apo divergence vs conformational axes | Table 5, Figure 3-4 |
+| `dual_query_divergence.tsv` | Holo/apo divergence vs conformational axes | Table 5, Figures 3-4 |
 | `phase5_recall.tsv` | Documented off-target recall | Table 15 |
 | `phase5_enrichment_null.tsv` | Enrichment against a matched null | Table 16 |
 | `phase5_pathways.tsv` | GO / KEGG / Reactome enrichment | Table 17 |
