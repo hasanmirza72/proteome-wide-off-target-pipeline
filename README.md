@@ -203,7 +203,7 @@ FoldDisco's high-confidence recall of documented off-targets is governed by pock
 
 ![Recall by fold-relatedness](scripts/figures/figures/fig7_recall_split.png)
 
-> **Figure 3.** Off-targets that share the query's pocket are recovered (for example pentoxifylline 3/3, selumetinib 1/1); those that do not are missed, even within the same fold (imatinib 0/4, ibrutinib 0/4). Overall high-confidence recall is 8/26.
+> **Figure 3.** Off-targets that share the query's pocket are recovered (for example pentoxifylline 3/3, selumetinib 1/1); those that do not are missed, whether they occupy the same fold with a different pocket (imatinib 0/4) or an unrelated fold (ibrutinib 0/4). Overall high-confidence recall is 8/26.
 
 ### ⚖️ 6.4 Baseline comparison against BLAST and Foldseek
 
