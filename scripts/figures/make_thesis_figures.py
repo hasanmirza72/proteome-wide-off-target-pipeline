@@ -187,8 +187,8 @@ def fig5():
     P = PAL["f5"]
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5.0), gridspec_kw={"width_ratios": [1.35, 1]})
     tint(fig, ax1, P["bg"]); tint(fig, ax2, P["bg"])
-    tg = ["NUDT1","DHFR","USB1","USP7","SYK","ALK","PDE4A","PTGR1","AKR1B1","USP15","CA2"]
-    jac = [0.000,0.011,0.029,0.035,0.050,0.070,0.090,0.120,0.150,0.250,0.318]
+    tg = ["NUDT1","DHFR","USB1","USP7","SYK","AKR1B1","PTGR1","PDE4A","ALK","USP15","CA2"]
+    jac = [0.000,0.011,0.029,0.035,0.050,0.066,0.100,0.198,0.208,0.250,0.318]
     cols = [P["b1"] if j < 0.1 else P["b2"] if j < 0.2 else P["b3"] for j in jac]
     ax1.bar(range(len(tg)), jac, color=cols, edgecolor="white", lw=1.6, zorder=3, width=0.7)
     ax1.axhline(0.066, ls=(0, (5, 3)), color=P["ink"], lw=1.6, zorder=2)
@@ -202,7 +202,7 @@ def fig5():
     leg = [Patch(color=P["b1"], label="Jaccard < 0.10"), Patch(color=P["b2"], label="0.10\u20130.20"),
            Patch(color=P["b3"], label="> 0.20")]
     ax1.legend(handles=leg, loc="upper left", frameon=True, fontsize=8.5)
-    axes = ["spatial\noverlap", "backbone\nRMSD", "pocket\nRMSD"]; rho = [0.094, -0.482, -0.251]; pv = [0.782, 0.139, 0.457]
+    axes = ["spatial\noverlap", "backbone\nRMSD", "pocket\nRMSD"]; rho = [0.094, -0.482, -0.251]; pv = [0.783, 0.133, 0.457]
     bcol = [P["sig"] if p < 0.05 else P["nsig"] for p in pv]; yy = np.arange(3)[::-1]
     ax2.barh(yy, rho, color=bcol, edgecolor="white", lw=1.6, zorder=3, height=0.6)
     ax2.axvline(0, color=P["ink"], lw=1.2)
@@ -255,27 +255,40 @@ def fig6():
 
 # ---------------------------------------------------------------- FIG 7 (cream track, no grey)
 def fig7():
-    P = PAL["f7"]; fig, ax = plt.subplots(figsize=(10, 5.6)); tint(fig, ax, P["bg"])
-    drugs = ["Pentoxifylline", "Selumetinib", "Crizotinib", "Sulindac", "Tacrolimus",
-             "Imatinib", "Ibrutinib", "Raloxifene", "Vorinostat"]
-    found = [3, 1, 2, 1, 1, 0, 0, 0, 0]; total = [3, 1, 3, 3, 3, 4, 4, 2, 3]; fam = [True]*5+[False]*4
+    P = PAL["f7"]; orange = "#C17817"
+    fig, ax = plt.subplots(figsize=(11, 6.7)); tint(fig, ax, P["bg"])
+    # three tiers, top -> bottom. Sulindac spans two tiers (AKR1B10 pocket-similar;
+    # PTGS1/PTGS2 unrelated fold), so it appears once in each, matching the recall table.
+    # tier1 = pocket-similar (6 target-groups), tier2 = same fold/diff pocket (imatinib),
+    # tier3 = unrelated fold (4 target-groups)
+    drugs = ["Pentoxifylline", "Selumetinib", "Crizotinib", "Sulindac (AKR1B10)", "Tacrolimus",
+             "Imatinib",
+             "Ibrutinib", "Sulindac (PTGS1/2)", "Raloxifene", "Vorinostat"]
+    found = [3, 1, 2, 1, 1,   0,   0, 0, 0, 0]
+    total = [3, 1, 3, 1, 3,   4,   4, 2, 2, 3]
     yy = np.arange(len(drugs))[::-1]
-    for yi, f, t, isfam in zip(yy, found, total, fam):
+    for yi, f, t in zip(yy, found, total):
         ax.barh(yi, t, color=P["tot"], edgecolor="white", lw=1.5, height=0.66, zorder=2)
-        ax.barh(yi, f, color=P["fam"] if isfam else P["miss"], edgecolor="white", lw=1.5, height=0.66, zorder=3)
-        ax.text(t+0.09, yi, f"{f}/{t}", va="center", fontsize=10.5, fontweight="bold", color=P["ink"])
-    ax.axhline(3.5, color=P["ink"], lw=1, ls=(0, (3, 3)), alpha=0.5)
-    card(ax, 4.5, 6.5, "family off-targets\n\u2192 recovered", P["fam"], ha="center", fs=9, pad=0.32)
-    card(ax, 4.5, 1.5, "unrelated folds\n\u2192 missed", P["miss"], ha="center", fs=9, pad=0.32)
+        if f > 0:
+            ax.barh(yi, f, color=P["fam"], edgecolor="white", lw=1.5, height=0.66, zorder=3)
+        ax.text(t+0.10, yi, f"{f}/{t}", va="center", fontsize=11, fontweight="bold", color=P["ink"])
+    # tier separators: tier1 y9..y5 (5 bars), imatinib y4, tier3 y3..y0 (4 bars)
+    for s in (4.5, 3.5):
+        ax.axhline(s, color=P["ink"], lw=1, ls=(0, (3, 3)), alpha=0.5)
+    # annotation cards parked far right, clear of the n/n labels (which end near x=4.2)
+    card(ax, 5.9, 7.0, "pocket-similar\n\u2192 recovered", P["fam"], ha="center", fs=9.5, pad=0.36)
+    card(ax, 5.9, 4.0, "same fold, different pocket\n(BLAST/Foldseek find these)", orange, ha="center", fs=9, pad=0.36)
+    card(ax, 5.9, 1.5, "unrelated fold\n\u2192 missed by all methods", P["miss"], ha="center", fs=9, pad=0.36)
     ax.set_yticks(yy); ax.set_yticklabels(drugs, fontsize=10.5)
-    ax.set_xlabel("Documented off-targets recovered @ high confidence"); ax.set_xlim(0, 5.7); ax.grid(axis="y", alpha=0)
-    ax.set_title("High-confidence recall splits by fold-relatedness  (8/26 = 0.31)", color=P["ink"], pad=26)
-    leg = [Patch(color=P["fam"], label="Family off-target (found)"),
-           Patch(color=P["miss"], label="Unrelated-fold (missed)"),
+    ax.set_xlabel("Documented off-targets recovered @ high confidence"); ax.set_xlim(0, 7.7); ax.grid(axis="y", alpha=0)
+    ax.set_xticks(range(0, 6))
+    ax.set_title("High-confidence recall splits by pocket similarity  (8/26 = 0.31)", color=P["ink"], pad=30)
+    ax.text(0.5, 1.045,
+            "pocket similarity, not fold, governs recovery  \u2022  only the unrelated-fold boundary is method-independent",
+            transform=ax.transAxes, ha="center", fontsize=9, style="italic", color=P["ink"])
+    leg = [Patch(color=P["fam"], label="Recovered @ high confidence"),
            Patch(color=P["tot"], label="Total documented")]
-    ax.legend(handles=leg, loc="lower right", frameon=True, fontsize=9.5)
-    ax.text(0.5, 1.045, "the fold-unrelated boundary is method-independent (BLAST and Foldseek also recover 0)",
-            transform=ax.transAxes, ha="center", fontsize=9, style="italic", color=P["miss"])
+    ax.legend(handles=leg, loc="lower center", bbox_to_anchor=(0.5, -0.20), ncol=2, frameon=True, fontsize=9.5)
     save(fig, "fig7_recall_split")
 
 # ---------------------------------------------------------------- FIG 8 (sage/plum/red)
