@@ -43,8 +43,8 @@ or comma-separated (`.csv`) table that opens in Excel, R, Python, or any text ed
 
 | File | Description | Thesis reference |
 |------|-------------|------------------|
-| `dual_query_divergence.tsv` | Holo/apo hit-list divergence (Jaccard) vs conformational axes | Table 5, Figure 3-4 |
-| `redundant_robustness.tsv` | Robustness to which drug's pocket defines the query | Chapter 4.5 (Table 6) |
+| `dual_query_divergence.tsv` | Holo/apo hit-list divergence (Jaccard) vs conformational axes | Table 5, Figures 3-4 |
+| `redundant_robustness.tsv` | Robustness to which drug's pocket defines the query | §4.5 (Table 6) |
 
 ### 5. Biological validation
 
@@ -68,7 +68,8 @@ or comma-separated (`.csv`) table that opens in Excel, R, Python, or any text ed
 ## File formats
 
 - All tables are UTF-8 encoded, tab-separated (`.tsv`) or comma-separated (`.csv`).
-- The first row of every file is a header naming the columns.
+- The first row of every file is a header naming the columns, except the two baseline outputs (blast_hits.tsv, foldseek_hits.tsv),
+  which are raw tool output with no header row; their columns are defined in DATA_DICTIONARY.md.
 - Missing values are empty cells (not `NA` or `0`), except where a column explicitly
   encodes a status such as `no_measured_value`.
 
