@@ -143,7 +143,7 @@ This framework addresses all three. **FoldDisco** searches the human AlphaFold p
 
 ## 📂 4. Dataset Breakdown
 
-- **Query set:** 40 candidate holo/apo drug-target pairs, curated to **23 non-redundant targets** across nine drug families (kinases, phosphodiesterases, deubiquitinases, reductases, nuclear receptors, and others).
+- **Query set:** 40 candidate holo/apo drug-target pairs, curated to **23 non-redundant targets** across seven target classes (kinases, hydrolases, phosphodiesterases, nuclear receptors, reductases, and others)
 
 - **Search library:** the human AlphaFold proteome reduced to **20,550 first-fragment models** (99.31% of the reviewed proteome), with a P2Rank pocket library covering the **16,325** proteins that carry at least one predicted cavity.
 
